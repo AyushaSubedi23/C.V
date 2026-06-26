@@ -2,11 +2,8 @@
 
 This repository contains the source code and compiled PDF of my professional resume.
 
-## 📂 Repository Files
-
-*   **`subedi_cv.tex`**: The \LaTeX\ source code file.
-*   **`subedi_cv.pdf`**: The production-ready compiled PDF document.
-
+The pdf file can be accessed through 
+https://github.com/AyushaSubedi23/C.V/blob/main/autoCV.pdf
 ---
 
 
