@@ -1,0 +1,235 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Ayusha Subedi} \\[7.5pt]
+\href{https://github.com/AyushaSubedi23}{\raisebox{-0.05\height}\faGithub\ github} \ $|$ \ 
+\href{https://linkedin.com/in/ayusha-subedi-80a786336}{\raisebox{-0.05\height}\faLinkedin\ linkden} 
+\ $|$ \ 
+\href{https://www.instagram.com/durig_s23}{\raisebox{-0.05\height}\faInstagram\ instagram}
+\ $|$\
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ durig.23@gmail.com} \ $|$ \ 
+\href{tel:(+49) 01725242024 }{\raisebox{-0.05\height}\faMobile \ (+49) 01725242024 } \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{About me }
+Enthusiastic software engineering student with an interest in coding, photography, web design, robotics and creative technology. Creative problem-solver. Experience in customer service, media and technical projects. Adaptable in fast-paced environments.
+-
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+\href{https://www.gisma.com/}{\textbf{Bachelor of Software Engineering }} \textbf{[GISMA University of Applied Science ]} & 2025 -- Present \\
+
+\href{https://fass.edu.np/}{\textbf{High School} }\textbf{[FASS]} & 2022 - 2024  \\
+\end{tabularx}
+
+
+%---------------------------------------------------------------------------------------
+%Experience
+\section{Work Experience}
+
+\begin{jobshort}{CESAR - CREATIVE DIRECTOR} { Dec 2023 - Feb 2025}
+• Creative designer with a strong foundation in scientific research methodologies and visual communication
+\end{jobshort}
+
+\begin{jobshort}{CONFIG NEPAL – HARDWARE ENGINEER ASSISTANT } {June 2024 - Feb 2025}
+• Dedicated Hardware Engineer Assistant intern with hands-on experience in robotics and software integration.
+\end{jobshort}
+
+\begin{jobshort}{RAJ WOODS - DIGITAL MARKETING MANAGER }{July 2022 - Jan 2025}
+• Proficient in leveraging social media platforms to enhance brand visibility and engagement.
+\end{jobshort}
+
+\begin{jobshort}{PHOTOGRAPHER – FREELANCER} {Mar 2020 - Present}
+• Experienced in working with diverse clients, delivering high-quality visual content, and managing shoots from concept to editing. Passionate about creating impactful imagery that connects with audiences.
+\end{jobshort}
+
+%Projects
+\section{Projects}
+
+\begin{itemize}
+    \item \textbf{Coffee Website} \hfill \href{https://github.com/yourusername/coffee-website}{GitHub}
+    
+    Designed and developed a responsive coffee shop website using HTML, CSS, and JavaScript.
+
+    \item \textbf{Snake Game} \hfill \href{https://github.com/yourusername/snake-game}{GitHub}
+    
+    Built a Python-based snake game featuring collision detection and score tracking.
+
+    \item \textbf{Bot Robots} (Config Nepal)
+    
+    Assisted in robotics development, circuit testing, and hardware integration.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS 
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Python | HTML, CSS, JavaScript | Web development (frontend) | Client Acquisition
+VS Code \\  Circuit testing | Robotics basic | Leadership | Data structures 
+\end{tabularx}{}
+
+
+%---------------------------------------------------------------------------------------
+%	LANGUAGE 
+%----------------------------------------------------------------------------------------
+\section{Languages}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+Nepali & \normalsize{$\star\star\star\star\star$ } \\
+
+English & \normalsize{$\star\star\star\star\star$ } \\
+
+German & \normalsize{$\star \star$ }\\
+
+\end{tabularx}
+\end{document}
